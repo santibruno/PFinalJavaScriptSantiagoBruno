@@ -1,0 +1,72 @@
+[
+{
+    "idAlumno":0,
+    "nombre": "Santiago",
+    "edad": 22,
+    "carrera": "Ingenieria en informatica",
+    "Materias Aprobadas": 25 
+},
+{
+    "idAlumno":1,
+    "nombre": "Martin Gorra",
+    "edad": 27,
+    "carrera": "Comercio Exterior",
+    "Materias Aprobadas": 19
+},
+{
+    "idAlumno":2,
+    "nombre": "Pablo Tierra",
+    "edad": 40,
+    "carrera": "Abogacia",
+    "Materias Aprobadas": 40
+},
+{
+    "idAlumno":3,
+    "nombre": "Facundo Licor",
+    "edad": 20,
+    "carrera": "Ingenieria en Biotecnologia",
+    "Materias Aprobadas": 10 
+},
+{
+    "idAlumno":4,
+    "nombre": "Lucas Rodriguez",
+    "edad": 29,
+    "carrera": "Periodismo",
+    "Materias Aprobadas": 14
+},
+{
+    "idAlumno":5,
+    "nombre": "Natalia Gomez",
+    "edad": 26,
+    "carrera": "Licenciada en alimentos",
+    "Materias Aprobadas": 12
+},
+{
+    "idAlumno":6,
+    "nombre": "Miguel Granados",
+    "edad": 36,
+    "carrera": "Periodismo",
+    "Materias Aprobadas": 28
+},
+{
+    "idAlumno":7,
+    "nombre": "Leonardo Perez",
+    "edad": 32,
+    "carrera": "Agronomia",
+    "Materias Aprobadas": 30
+},
+{
+    "idAlumno":8,
+    "nombre": "Ignacio Ramon",
+    "edad": 23,
+    "carrera": "Programacion",
+    "Materias Aprobadas": 5
+},
+{
+    "idAlumno":9,
+    "nombre": "Lionel Messi",
+    "edad": 34,
+    "carrera": "Artista",
+    "Materias Aprobadas": 10
+}
+]

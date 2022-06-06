@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://bootswatch.com/5/vapor/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+</head>
+<body class="body1">
+    <h1 class="m-5 text-center">Bienvenido</h1>    
+    <div id="divProductos" class="row">  
+    </div>
+    <main id="mainAccion">
+        <br>
+        <h2 class="text-center">Agregar producto</h2>
+        <div class="container">
+            <form id="formulario">
+                <div class="mb-3">
+                    <label for="Nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="idNombre">
+                </div>
+                <div class="mb-3">
+                    <label for="idColor" class="form-label">Color</label>
+                    <input type="text" class="form-control"  name="idColor" id="idColor">
+                </div>
+                <div class="mb-3">
+                    <label for="idValor" class="form-label">Valor</label>
+                    <input type="number" class="form-control"  name="idValor" id="idValor">
+                </div>
+                <div class="mb-3">
+                    <label for="idStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control"  name="idStock" id="idStock">
+                </div>
+                <button class="p-2 h2 color1" type="submit">Crear Producto</button>
+            </form>
+        </div>
+        <div id="divCantidadCuotas" class=" m-2">
+            <hr>
+            <h2>Calcular Cuotas </h2>
+            <h3 class="h6 ">Recordar que a mas cuotas, mas interes al precio final</h3>
+            
+            <br>
+            <h4 class="h3">¿Que producto desea seleccionar? (escriba el nombre) <input type="text" name="" id="inputProdCuotas" class="m-2"></h3>
+            <br>        
+            <h5 class="h3">Seleccione cantidad de Cuotas <input type="number" name="" id="inputCantCuotas" class="m-2"></h4>
+            
+            <button id="cantidadCuotas" class="m-2 p-2 h2 color1">Calcular Cuotas</button>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
