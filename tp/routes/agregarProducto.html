@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet"  crossorigin="anonymous">
+    
+</head>
+<body class="body1">
+    <nav class="navbar nav-pills navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>      
+          <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="index.html">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">                
+                <a class="nav-link" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item">                
+                <a class="nav-link active" href="agregarProducto.html">Agregar Producto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+    <main id="mainAccion border-1" >
+        
+        <h1 class="text-center">Agregar producto</h1>
+        <div class="container">
+            <form id="formulario">
+                <div class="mb-3">
+                    <label for="Nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="idNombre">
+                </div>
+                <div class="mb-3">
+                    <label for="idColor" class="form-label">Color</label>
+                    <input type="text" class="form-control"  name="idColor" id="idColor">
+                </div>
+                <div class="mb-3">
+                    <label for="idValor" class="form-label">Valor</label>
+                    <input type="number" class="form-control"  name="idValor" id="idValor">
+                </div>
+                <div class="mb-3">
+                    <label for="idStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control"  name="idStock" id="idStock">
+                </div>
+                <button class="p-2 h2 color1" type="submit">Crear Producto</button>
+            </form>
+        </div>
+    </main>
+    <script src="../script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+[
+    {
+        "nombre":"Remera con estampa",
+        "id":1,
+        "valor":500,
+        "color":"negro",
+        "stock":9,
+        "img":null
+    },
+    {
+        "nombre":"Remera Lisa",
+        "id":2,
+        "valor":300,
+        "color":"blanca",
+        "stock":5,
+        "img":null
+    },
+    {
+        "nombre":"Jean skinny",
+        "id":3,
+        "valor":1200,
+        "color":"azul",
+        "stock":3,
+        "img":null
+    },
+    {
+        "nombre":"buzo hoodie",
+        "id":4,
+        "valor":1000,
+        "color":"Violeta",
+        "stock":6,
+        "img":null
+    },
+    {
+        "nombre":"pantalon babucha",
+        "id":5,
+        "valor":600,
+        "color":"negro",
+        "stock":11,
+        "img":null
+    },
+    {
+        "nombre":"piluso",
+        "id":6,
+        "valor":350,
+        "color":"blanco",
+        "stock":6,
+        "img":null
+    },
+    {
+        "nombre":"campera de jean",
+        "id":7,
+        "valor":2000,
+        "color":"azul",
+        "stock":2,
+        "img":null
+    }
+]
