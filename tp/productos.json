@@ -45,7 +45,7 @@
         "valor":350,
         "color":"blanco",
         "stock":6,
-        "img":null
+        "img":"../imagenes/piluso.jpg"
     },
     {
         "nombre":"campera de jean",
@@ -53,6 +53,6 @@
         "valor":2000,
         "color":"azul",
         "stock":2,
-        "img":null
+        "img":"../imagenes/camperaJean.jpeg"
     }
 ]
