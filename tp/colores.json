@@ -1,0 +1,27 @@
+
+[
+    {
+    "color":"Blanco",
+    "valor":"white"
+    },   
+    {
+    "color":"Negro",
+    "valor":"black"
+    },
+    {
+    "color":"Azul",
+    "valor":"blue"
+    },   
+    {
+    "color":"Rojo",
+    "valor":"red"
+    },
+    {
+    "color":"Violeta",
+    "valor":"violeta"
+    },   
+    {
+    "color":"Verde",
+    "valor":"green"
+    }
+]

@@ -28,22 +28,25 @@
                 <a class="nav-link active" href="catalogo.html">Catalogo</a>
               </li>
               <li class="nav-item">                
-                <a class="nav-link disabled" href="productos.html">Productos</a>
-              </li>
-              <li class="nav-item">                
-                <a class="nav-link disabled" href="agregarProducto.html">Agregar Producto</a>
+                <button class="nav-link" id="carrito" href="" ><img src="../imagenes/Carrito.png" width="30px" alt=""></button>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <div class="d-flex">
+              <input class="form-control me-sm-2" type="text" placeholder="" id="inputCatalogo">
+              <button class="btn btn-secondary my-2 my-sm-0" id="botonCatalogo" type="submit">Search</button>
+            </div>
+
           </div>
         </div>
       </nav>
-
+      <div id="divCarrito" class="m-2 row border border-dark"> 
+      </div>
+      <div id="divCatalogo" class="row"> 
+      </div>
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script src="../script.js"></script>
+    <script src="../scriptCatalogo.js"></script>
 </body>
 </html>

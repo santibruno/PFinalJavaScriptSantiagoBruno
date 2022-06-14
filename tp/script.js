@@ -23,15 +23,6 @@ function calcularCuotas(cantidad,valor){
 }
 function productoAccion(){  
         productos.forEach(producto=> {
-        /*document.getElementById(`agregarCarrito${producto.id}`).addEventListener('click',(e)=>{
-            e.preventDefault()
-            if (carrito.find(prod=>prod.id==producto.id)){
-            }else{
-                carrito.push(producto)
-                localStorage.setItem("productoCarrito",JSON.stringify(carrito))  
-                Swal.fire('Elemento Agregado al carrito ') 
-            }                  
-        })*/
         document.getElementById(`eliminarProducto${producto.id}`).addEventListener('click',(e)=>{    
             e.preventDefault()        
             productos=borrarProducto(productos,producto.id);            
@@ -70,7 +61,7 @@ function actualizarProductos(divProductos,productos){
         <div class="card-body">
           <p class="card-text">
           Valor: $ ${productoEnArray.valor} <br>
-          Color: $ ${productoEnArray.color}<br>
+          Color:  ${productoEnArray.color}<br>
           Stock:  ${productoEnArray.stock}
           </p>
           <br>
@@ -82,7 +73,6 @@ function actualizarProductos(divProductos,productos){
         </div>
     </div>
         `
-        // <button id="agregarCarrito${productoEnArray.id}" class="p-2 h6 color1 ">Agregar a Carrito</button>
     })
 }
 class Producto {
@@ -99,7 +89,7 @@ class Producto {
     }
 }
 //------------------------------------------------------------------------------------------------//
-let carrito=[]
+
 let productos=[]
 let divProductos=document.getElementById("divProductos1")
 let productoCuotas= document.getElementById("inputProdCuotas")
@@ -113,15 +103,13 @@ window.addEventListener('load', ()=>{
     .then(response=>response.json())
     .then(cargaProducto=>{
         cargaProducto.forEach(p=>productos.push(new Producto (p.nombre,p.id,p.valor,p.color,p.stock,p.img)))
-        if (localStorage.getItem("producto")){
-            const productoNuevo=JSON.parse(localStorage.getItem('producto'))
+        if (localStorage.getItem("productoNuevo")){
+            const productoNuevo=JSON.parse(localStorage.getItem('productoNuevo'))
             productos.push(new Producto (productoNuevo.nombre,productoNuevo.id,productoNuevo.valor,productoNuevo.color,productoNuevo.stock,productoNuevo.img))
-            localStorage.removeItem("producto")
             }
         setTimeout(()=>{
             actualizarProductos(divProductos,productos)
-        },1000)
-        
+        },1000)        
     })})
 
 divProductos.addEventListener('focusin',()=>productoAccion())

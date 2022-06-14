@@ -19,6 +19,24 @@
 .h-25{
     height: 25%;
 }
+.cwhite{
+    background-color: white;
+}
+.cblack{
+    background-color: black;
+}
+.cred{
+    background-color:red;
+}
+.cvioleta{
+    background-color: violet;
+}
+.cblue{
+    background-color: blue;
+}
+.cgreen{
+    background-color: green;
+}
 .text-center {
     display: flex;
     align-items: center;
