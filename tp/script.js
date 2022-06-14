@@ -23,7 +23,7 @@ function calcularCuotas(cantidad,valor){
 }
 function productoAccion(){  
         productos.forEach(producto=> {
-        document.getElementById(`agregarCarrito${producto.id}`).addEventListener('click',(e)=>{
+        /*document.getElementById(`agregarCarrito${producto.id}`).addEventListener('click',(e)=>{
             e.preventDefault()
             if (carrito.find(prod=>prod.id==producto.id)){
             }else{
@@ -31,7 +31,7 @@ function productoAccion(){
                 localStorage.setItem("productoCarrito",JSON.stringify(carrito))  
                 Swal.fire('Elemento Agregado al carrito ') 
             }                  
-        })
+        })*/
         document.getElementById(`eliminarProducto${producto.id}`).addEventListener('click',(e)=>{    
             e.preventDefault()        
             productos=borrarProducto(productos,producto.id);            
@@ -53,14 +53,19 @@ function productoAccion(){
     })
 }
 
+function refresh() {
+    setTimeout(function(){ 
+      window.location.href = "productos.html";
+}, 2000);
+}
 function actualizarProductos(divProductos,productos){
     if (divProductos){
         divProductos.innerHTML=""
     }
     productos.forEach(productoEnArray=>{divProductos.innerHTML+=    
         `   
-    <div class="card text-white bg-primary m-3 col-sm-8 col-md-4 col-lg-2" style="max-width: 20rem;">
-        <img class="card-img-top " src="${productoEnArray.img}" alt="Card image cap">
+    <div class="card text-white bg-primary m-3 col-sm-6 col-md-4 col-lg-2" style="max-width: 20rem;">
+        <img class="card-img-top circle" src="${productoEnArray.img}" alt="Card image cap">
         <div class="h3 w-100 h-25 color2 card-header text-center">${productoEnArray.nombre}</div>
         <div class="card-body">
           <p class="card-text">
@@ -69,34 +74,16 @@ function actualizarProductos(divProductos,productos){
           Stock:  ${productoEnArray.stock}
           </p>
           <br>
-          <div class="d-flex d-md-flex d-lg-flex flex-lg-column flex-md-column d-sm-inline-flex p-2">
-          <button id="agregarCarrito${productoEnArray.id}" class="p-2 h6 color1 ">Agregar a Carrito</button>
+          <div class="d-flex d-md-flex d-lg-flex d-sm-flex  flex-lg-column flex-md-column flex-sm-column p-2">         
           <button id="eliminarProducto${productoEnArray.id}" class="p-2 h6  color1">Eliminar Producto</button>
           <button id="disminuirStock${productoEnArray.id}" class="p-2 h6 color1">Disminuir Stock </button>
           <button id="agregarStock${productoEnArray.id}" class="p-2 h6 color1">Agregar Stock</button>
           </div>
         </div>
     </div>
-    
         `
-    })/*
-    <div class="d-flex card m-5 p-1 col-sm-8 col-md-4 col-lg-2 " >
-        <div class="card-body cards1 rounded">
-        <h2 class="h3 w-100 h-25 color2 tex-center">${productoEnArray.nombre}</h2>
-        <p class="card-text ">
-        Valor: $ ${productoEnArray.valor} <br>
-        Color: $ ${productoEnArray.color}<br>
-        Stock:  ${productoEnArray.stock}
-        <br>
-        <div class="d-flex d-md-flex d-lg-flex flex-lg-column flex-md-column d-sm-inline-flex p-2">
-        <button id="agregarCarrito${productoEnArray.id}" class="p-2 h6 color1 ">Agregar a Carrito</button>
-        <button id="eliminarProducto${productoEnArray.id}" class="p-2 h6  color1">Eliminar Producto</button>
-        <button id="disminuirStock${productoEnArray.id}" class="p-2 h6 color1">Disminuir Stock </button>
-        <button id="agregarStock${productoEnArray.id}" class="p-2 h6 color1">Agregar Stock</button>
-        </div>
-        
-        
-        </div>   </div>    */
+        // <button id="agregarCarrito${productoEnArray.id}" class="p-2 h6 color1 ">Agregar a Carrito</button>
+    })
 }
 class Producto {
     constructor(nombre, id, valor, color,stock,img){
@@ -111,10 +98,9 @@ class Producto {
         this.valor=this.valor* iva
     }
 }
-
-//------------------------------------------------------------------------------------------------
-let productos=[]
+//------------------------------------------------------------------------------------------------//
 let carrito=[]
+let productos=[]
 let divProductos=document.getElementById("divProductos1")
 let productoCuotas= document.getElementById("inputProdCuotas")
 let cantCuotas=document.getElementById("inputCantCuotas")
@@ -130,7 +116,7 @@ window.addEventListener('load', ()=>{
         if (localStorage.getItem("producto")){
             const productoNuevo=JSON.parse(localStorage.getItem('producto'))
             productos.push(new Producto (productoNuevo.nombre,productoNuevo.id,productoNuevo.valor,productoNuevo.color,productoNuevo.stock,productoNuevo.img))
-            //localStorage.removeItem("producto")
+            localStorage.removeItem("producto")
             }
         setTimeout(()=>{
             actualizarProductos(divProductos,productos)
@@ -138,7 +124,4 @@ window.addEventListener('load', ()=>{
         
     })})
 
-
-
 divProductos.addEventListener('focusin',()=>productoAccion())
-

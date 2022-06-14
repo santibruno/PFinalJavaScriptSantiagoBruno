@@ -5,7 +5,7 @@
         "valor":500,
         "color":"negro",
         "stock":9,
-        "img":null
+        "img":"../imagenes/remeraEstampada.jpeg"
     },
     {
         "nombre":"Remera Lisa",
@@ -13,15 +13,15 @@
         "valor":300,
         "color":"blanca",
         "stock":5,
-        "img":null
+        "img":"../imagenes/remeraLisa.jpeg"
     },
     {
-        "nombre":"Jean skinny",
+        "nombre":"Jean",
         "id":3,
         "valor":1200,
         "color":"azul",
         "stock":3,
-        "img":null
+        "img":"../imagenes/jean.jpeg"
     },
     {
         "nombre":"buzo hoodie",
@@ -29,7 +29,7 @@
         "valor":1000,
         "color":"Violeta",
         "stock":6,
-        "img":null
+        "img":"../imagenes/buzo.jpeg"
     },
     {
         "nombre":"pantalon babucha",
@@ -37,7 +37,7 @@
         "valor":600,
         "color":"negro",
         "stock":11,
-        "img":null
+        "img":"../imagenes/jogging.jpeg"
     },
     {
         "nombre":"piluso",
@@ -45,7 +45,7 @@
         "valor":350,
         "color":"blanco",
         "stock":6,
-        "img":"../imagenes/piluso.jpg"
+        "img":"../imagenes/piluso.jpeg"
     },
     {
         "nombre":"campera de jean",

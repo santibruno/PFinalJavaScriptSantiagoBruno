@@ -20,19 +20,19 @@
           <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link " href="index.html">Home
+                <a class="nav-link " href="index.html">Login
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item">                
-                <a class="nav-link active" href="productos.html">Productos</a>
+                <a class="nav-link active" href="catalogo.html">Catalogo</a>
               </li>
               <li class="nav-item">                
-                <a class="nav-link" href="agregarProducto.html">Agregar Producto</a>
+                <a class="nav-link disabled" href="productos.html">Productos</a>
               </li>
-              <li class="nav-item"  >
-                <a class="nav-link" href="#">About</a>
-              </li>              
+              <li class="nav-item">                
+                <a class="nav-link disabled" href="agregarProducto.html">Agregar Producto</a>
+              </li>
             </ul>
             <form class="d-flex">
               <input class="form-control me-sm-2" type="text" placeholder="Search">
@@ -42,35 +42,8 @@
         </div>
       </nav>
 
-    <div id="divProductos1" class="row"> 
-         
-    </div>
-    <main id="mainAccion">
-        
-        <h2 class="text-center">Agregar producto</h2>
-        <div class="container">
-            <form id="formulario">
-                <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="idNombre">
-                </div>
-                <div class="mb-3">
-                    <label for="idColor" class="form-label">Color</label>
-                    <input type="text" class="form-control" name="idColor" id="idColor">
-                </div>
-                <div class="mb-3">
-                    <label for="idValor" class="form-label">Valor</label>
-                    <input type="number" class="form-control"  name="idValor" id="idValor">
-                </div>
-                <div class="mb-3">
-                    <label for="idStock" class="form-label">Stock</label>
-                    <input type="number" class="form-control"  name="idStock" id="idStock">
-                </div>
-                <button class="p-2 h2 color1" type="submit">Crear Producto</button>
-            </form>
-        </div>        
-    </main>
-    <script src="../script.js"></script>
+    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

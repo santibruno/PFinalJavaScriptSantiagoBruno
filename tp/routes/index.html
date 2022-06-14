@@ -20,20 +20,18 @@
           <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Catalogo
+                <a class="nav-link active" href="index.html">Login
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
-              <li class="nav-item">
-                
-                <a class="nav-link" href="productos.html">Productos</a>
+              <li class="nav-item">                
+                <a class="nav-link disabled" href="catalogo.html">Catalogo</a>
               </li>
-              <li class="nav-item">
-                
-                <a class="nav-link" href="agregarProducto.html">Agregar Producto</a>
+              <li class="nav-item">                
+                <a class="nav-link disabled" href="productos.html">Productos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+              <li class="nav-item">                
+                <a class="nav-link disabled" href="agregarProducto.html">Agregar Producto</a>
               </li>
             </ul>
             <form class="d-flex">
@@ -43,9 +41,37 @@
           </div>
         </div>
       </nav>
-
+    <main>
+      <div class="container login-container">
+        <div class="row">
+            <form class="col-md-6 login-form-1" id="submitUser">
+                <h3>Ingresar como usuario</h3>                
+                    <div class="form-group">
+                        <input type="text" name="usuario" class="form-control" placeholder="¿Cual es tu nombre?" value="" />
+                    </div>
+                    <div class="form-group text-center">
+                        <input type="submit" class="btnSubmit" value="Ingresar"  />
+                    </div>                
+            </form>
+            <form class="col-md-6 login-form-2" id="submitAdmin">
+                <h3>Login Form 2</h3>
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Your Email *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Your Password *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </main>
     
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../script.js"></script>
+    <script src="../scriptLogin.js"></script>
 </body>
 </html>
