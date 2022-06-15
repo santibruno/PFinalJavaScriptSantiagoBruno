@@ -1,4 +1,4 @@
-function actualizarCatalogo(divProductos,productos,aprox){
+function actualizarCatalogo(divProductos,productos,aprox){ // actualiza el div de la pagina para ver los productos del catalgo
     //El aprox lo utilizare para luego hacer el aproximado en la busqueda
     if (!aprox){
         if (divProductos){
@@ -24,7 +24,7 @@ function actualizarCatalogo(divProductos,productos,aprox){
             `
         })       
    }}
-function agregarcarrito(carrito,producto){ 
+function agregarcarrito(carrito,producto){  //Agrega el producto al carrito
     const productoCarrito={...producto,cantidad:1}
     if (carrito.some((p) => p.id === producto.id)){
         carrito.map((prod => {
@@ -39,7 +39,7 @@ function agregarcarrito(carrito,producto){
     return carrito
         
     }
-function showCarrito(divCarrito,carrito) {
+function carritoP(divCarrito,carrito) { //actualizo el div del carrito
         if (divCarrito){
             divCarrito.innerHTML=""
         }
@@ -49,23 +49,33 @@ function showCarrito(divCarrito,carrito) {
             <div class="h5 w-100 color2 text-center">${carritoEnArray.nombre}</div>            
               <p class="card-text">
               <div class="d-flex d-md-flex d-lg-flex d-sm-flex  flex-lg-column flex-md-column flex-sm-column p-2">
-              <button id="BorradDeCarrito${carritoEnArray.id}" class="p-2 h6 color1 ">Eliminar del carrito</button> 
-              <p>${carritoEnArray.cantidad}</p>        
+              <button id="borrarDeCarrito${carritoEnArray.id}" class="p-2 h6 color1">Eliminar del carrito</button> 
+              <p class= "h6 cwhite">Cantidad: ${carritoEnArray.cantidad}</p>        
               </div>
               </p>
               <br>             
         </div>
             `        
+           
         })
         divCarrito.innerHTML+=` <br>
-        <button id="cerrarCarrito" class="p-2 h6 color1 w-25 h-25  ">cerrar</button>
-        ` 
-
+        <button id="cerrarCarrito" class="p-2 h6 color1 w-25 h-25  ">cerrar</button>    ` 
+        document.getElementById('cerrarCarrito').addEventListener('click',()=>divCarrito.innerHTML="")
+        carrito.forEach(produc => {
+            document.getElementById(`borrarDeCarrito${produc.id}`).addEventListener('click',()=>{ // Se Asigna la funcion a los botones eliminar
+                carrito=carrito.filter(p=>p.id!=produc.id)
+                localStorage.setItem("carrito",JSON.stringify(carrito))
+                carritoP(divCarrito,carrito)
+        })
+        
+        
+      })
+        
+        
     }
-
+    let carrito=[]
     let divCatalogo=document.getElementById("divCatalogo")
     let divCarrito=document.getElementById("divCarrito")
-    let carrito=[]
     let botonCarrito=document.getElementById("carrito")   
     setTimeout(()=>{
         actualizarCatalogo(divCatalogo,productos)
@@ -88,10 +98,19 @@ function showCarrito(divCarrito,carrito) {
                 title: 'Producto agregado al carrito'
               })
             localStorage.setItem("carrito",JSON.stringify(carrito))
-            })})
+            
+            })})    
+    },1000)    
+        botonCarrito.addEventListener('click',()=>{ // Verifica que el carrito no este vacio
+            if (carrito.length==0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Carrito Vacio',
+                    showConfirmButton: false,
+                    timer: 3000      
+                  })
+            }else{
+                carritoP(divCarrito,carrito)
+            }
+        })
     
-    },1000)
-   
- 
-    divCarrito.addEventListener('focusin',()=>carritoAccion())
-    botonCarrito.addEventListener('click',()=>showCarrito(divCarrito,carrito))

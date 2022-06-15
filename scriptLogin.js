@@ -1,7 +1,7 @@
 let submitUser=document.getElementById("submitUser")
 let submitAdmin=document.getElementById("submitAdmin")
 
-submitUser.addEventListener('submit',(e)=>{
+submitUser.addEventListener('submit',(e)=>{//Ingresar como usuario
     e.preventDefault()
     let datForm=new FormData(e.target)
     if (datForm.get('usuario')&&isNaN(datForm.get('usuario'))){
@@ -24,9 +24,9 @@ submitUser.addEventListener('submit',(e)=>{
         submitUser.reset();
     }
 })
-submitAdmin.addEventListener('submit',(e)=>{
-    e.preventDefault()
-    let datForm=new FormData(e.target)
+submitAdmin.addEventListener('submit',(event)=>{//Ingresar como Administrador
+    event.preventDefault()
+    let datForm=new FormData(event.target)
     if (datForm.get('username')&&datForm.get('password')){
         fetch('../administradores.json')
         .then(response=>response.json())
@@ -51,7 +51,7 @@ submitAdmin.addEventListener('submit',(e)=>{
                       })
                     submitAdmin.reset();
                 }
-        });
+        })
         })        
     }else{
         Swal.fire({

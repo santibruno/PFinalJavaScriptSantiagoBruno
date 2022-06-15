@@ -1,4 +1,4 @@
-function agregarStock(productos,id){
+function agregarStock(productos,id){ //Agrega el stock que se indica 
             let cantidad = parseInt(prompt(`El Stock del producto es ${(productos.find(p=>p.id===id)).stock}\n Cuanto desea agregar?` ))
             while (isNaN(cantidad)){
                 cantidad =  parseInt(prompt(`El Stock a agregar debe ser un valor valido (numerico) \n Cuanto desea agregar?` ))
@@ -6,10 +6,10 @@ function agregarStock(productos,id){
             return productos.map(p=>{
                 if(p.id===id){p.stock+=cantidad}})        
 }
-function borrarProducto(productos,id){   
+function borrarProducto(productos,id){ //Borrar producto
       return (productos.filter(producto=>producto.id!=id))
     }
-function disminuirStock(productos,id){
+function disminuirStock(productos,id){ // disminuir stock indicado
     let cantidad = parseInt(prompt(`El Stock del producto es ${(productos.find(p=>p.id===id)).stock}\n Cuanto desea disminuir?` ))
     while (isNaN(cantidad)||(productos.find(p=>p.id===id)).stock<cantidad){
         cantidad =  parseInt(prompt(`El Stock a disminuir debe ser un valor valido (numerico) menor a ${(productos.find(p=>p.id===id)).stock}\n Cuanto desea eliminar?` ))
@@ -17,11 +17,11 @@ function disminuirStock(productos,id){
     return productos.map(p=>{
         if(p.id===id){p.stock-=cantidad}})
 }
-function calcularCuotas(cantidad,valor){
+function calcularCuotas(cantidad,valor){ //Calcular Cuotas (no lo implemente)
     const impuesto = 0.05*cantidad + 1
     return (valor*impuesto)/cantidad
 }
-function productoAccion(){  
+function productoAccion(){   // Determino las acciones que se realizan con los botones de las cards
         productos.forEach(producto=> {
         document.getElementById(`eliminarProducto${producto.id}`).addEventListener('click',(e)=>{    
             e.preventDefault()        
@@ -44,12 +44,8 @@ function productoAccion(){
     })
 }
 
-function refresh() {
-    setTimeout(function(){ 
-      window.location.href = "productos.html";
-}, 2000);
-}
-function actualizarProductos(divProductos,productos){
+
+function actualizarProductos(divProductos,productos){ //Actualizo el Div de la pagina con los productos
     if (divProductos){
         divProductos.innerHTML=""
     }
@@ -75,7 +71,7 @@ function actualizarProductos(divProductos,productos){
         `
     })
 }
-class Producto {
+class Producto { // constructor de producto
     constructor(nombre, id, valor, color,stock,img){
         this.nombre = nombre.toUpperCase();
         this.id = parseInt(id);
@@ -84,7 +80,7 @@ class Producto {
         this.stock = parseInt(stock)
         this.img= img
     }
-    sumarIva(){
+    sumarIva(){//No lo implemente
         this.valor=this.valor* iva
     }
 }
@@ -98,7 +94,7 @@ let bCalcCuotas=document.getElementById("cantidadCuotas")
 let botonAux=document.getElementById("botonAux")
 
 
-window.addEventListener('load', ()=>{
+window.addEventListener('load', ()=>{ //descarga el archivo.json cuando se actualiza la pagina y se cargan los productos en un array (tambien el del local storage)
     fetch('../productos.json')
     .then(response=>response.json())
     .then(cargaProducto=>{
